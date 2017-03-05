@@ -30,16 +30,18 @@ int main() {
   char my_name[5];
   strcpy(my_name, "James");
 
-  // the row using the update_row method of the interface
+  // populate the row using the update_row method of the interface
   // it takes the row builder, the column name, and either an int or a char *
   ctrl->update_row(nr, name, my_name);
   ctrl->update_row(nr, age, 32);
 
-  // inserting the row will delete the row builder
+  // inserting the row will delete the row builder object
   ctrl->insert_row(nr);
 
   // print out the contents of our table
   ctrl->print_table(tbl_name);
+  
+  // >> 0 - name: "James", age: 32
   
   return 0;
 }
